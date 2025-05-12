@@ -1,14 +1,13 @@
 {% set name = "bhklab-project-template" %}
-{% set version = "0.5.2" %}
+{% set version = "0.5.4" %}
 {% set python_min = "3.12" %}
-
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/bhklab_project_template-{{ version }}.tar.gz
-  sha256: 3e2911975ab40643b3c5c40709e650a9c14e740cb7344c4572fbb5cec5fa6111
+  sha256: 08bb7d3f5956269ebbef24f9315e2ff1de38a23a2b942249dab5e1e3a5caf265
 
 build:
   entry_points:
@@ -31,6 +30,7 @@ requirements:
 test:
   imports:
     - bhklab_project_template
+    
   commands:
     - pip check
     - bhk-project-template --help
@@ -38,13 +38,12 @@ test:
     - pip
     - python {{ python_min }}
 
+
 about:
-    summary: A simple CLI tool to create new BHKLab projects from a template
-    license: MIT
-    license_file: PLEASE_ADD_LICENSE_FILE
-    home: https://github.com/bhklab/bhklab-project-template
-    doc_url: https://github.com/bhklab/bhklab-project-template
-    dev_url: https://github.com/bhklab/bhklab-project-template
+  summary: A simple CLI tool to create new BHKLab projects from a template
+  license: MIT
+  license_file: LICENSE.md
+  home: https://github.com/bhklab/bhklab-project-template
 extra:
   recipe-maintainers:
     - jjjermiah
