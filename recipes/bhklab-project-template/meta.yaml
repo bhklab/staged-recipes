@@ -1,5 +1,5 @@
 {% set name = "bhklab-project-template" %}
-{% set version = "0.5.4" %}
+{% set version = "0.5.5" %}
 {% set python_min = "3.12" %}
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/bhklab_project_template-{{ version }}.tar.gz
-  sha256: 08bb7d3f5956269ebbef24f9315e2ff1de38a23a2b942249dab5e1e3a5caf265
+  sha256: e3f6fc5347a34840680d2986b908457ad44cbaf4f3588866d82b154c7ad66f57
 
 build:
   entry_points:
-    - bhk-project-template = bhklab_project_template.__init__:cli
+    - bhklab-project-template = bhklab_project_template.__init__:cli
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
@@ -33,7 +33,7 @@ test:
     
   commands:
     - pip check
-    - bhk-project-template --help
+    - bhklab-project-template --help
   requires:
     - pip
     - python {{ python_min }}
